@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* Ensures padding and margin don't affect width/height */
 }
 
 html,
@@ -9,60 +10,18 @@ body {
     height: 100%;
     overflow: hidden;
     user-select: none;
-    font-family: 'Arial', sans-serif; /* Choose a clean, modern font */
+    font-family: Arial, sans-serif; /* Set a default font for better aesthetics */
 }
 
 #main {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #591584, #ff2e63); /* Gradient background */
+    background-color: #591584;
+    background-size: cover;
     display: flex;
-    justify-content: center; /* Centering content */
-    align-items: center; /* Centering content vertically */
-    overflow: hidden;
-    position: relative; /* Added for absolute positioning of child elements */
-}
-
-#instructions {
-    width: 250px; /* Set a width for the instructions */
-    padding: 20px; /* Add some padding */
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    position: absolute; /* Position it on the side */
-    left: 20px; /* Align to the left */
-    top: 20px; /* Align to the top */
-    z-index: 2; /* Keep it above other elements */
-}
-
-#social-media {
-    position: absolute; /* Position on the side */
-    right: 20px; /* Align to the right */
-    bottom: 20px; /* Align to the bottom */
-    padding: 20px; /* Add padding */
-    background: rgba(255, 255, 255, 0.8); /* Background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    z-index: 2; /* Keep it above other elements */
-}
-
-#social-media h2 {
-    font-size: 20px; /* Size for the heading */
-    color: #591584; /* Match the color theme */
-    text-align: center; /* Center text */
-}
-
-#social-media a {
-    display: block; /* Make each link block level */
-    font-size: 16px; /* Font size for links */
-    color: #591584; /* Link color */
-    text-decoration: none; /* Remove underline */
-    margin: 5px 0; /* Space between links */
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-#social-media a:hover {
-    color: #ff2e63; /* Change color on hover */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
 }
 
 #main-lamp {
@@ -70,9 +29,9 @@ body {
     height: 600px;
     background-image: url(dark.png);
     background-size: cover;
-    border-radius: 20px; /* Rounded corners for a softer look */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    margin: auto;
+    margin-top: 20px; /* Add space at the top */
+    border-radius: 15px; /* Round corners for aesthetics */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 #LoveYou {
@@ -80,19 +39,16 @@ body {
     font-size: 80px;
     font-weight: bolder;
     text-align: center;
-    text-shadow: 3px 3px 20px rgba(255, 255, 255, 0.8); /* Softer white shadow */
+    text-shadow: 3px 3px 10px red;
     z-index: 1;
-    transition: transform 0.3s ease; /* Smooth scaling effect */
 }
 
 @keyframes message {
     from {
         opacity: 0;
-        transform: translateY(-20px); /* Slight movement upwards */
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Reset to original position */
     }
 }
 
@@ -102,37 +58,84 @@ body {
 }
 
 .message_vis {
-    backdrop-filter: blur(10px); /* Subtle blur for better focus */
+    backdrop-filter: blur(100px); /* Adjust the blur radius as needed */
     color: transparent;
     opacity: 0.05;
 }
 
-.white, .red {
+.white {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); /* Softer stroke color */
+    -webkit-text-stroke: red 1px;
+}
+
+.red {
+    color: transparent;
+    -webkit-text-stroke: red 1px;
 }
 
 #string {
     width: 5px;
     height: 700px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent string */
+    background-color: white;
     display: flex;
     align-items: end;
-    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.5);
-    border-radius: 5px; /* Slight rounding for string */
+    box-shadow: 10px 0px 30px 1px rgba(0, 0, 0, 0.5); /* Improved shadow */
 }
 
 #string_boll {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    box-shadow: 10px 0px 30px 1px rgba(0, 0, 0, 0.5); /* Improved shadow */
     border-radius: 50%;
-    transform: translate(-50%, 10px); /* Center the ball horizontally */
-    transition: background-color 0.3s ease; /* Smooth color transition */
+    transform: translate(-50%, 10px); /* Centering the string ball */
 }
 
-#string_boll:hover {
-    background-color: rgba(255, 165, 0, 0.8); /* Change color on hover */
+/* Styles for instructions and social media */
+#instructions,
+#social-media {
+    width: 100%; /* Full width for better mobile display */
+    max-width: 300px; /* Set a max width for larger screens */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Space between sections */
+    text-align: center; /* Center-align the text */
+}
+
+#social-media h2 {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-bottom: 10px; /* Space below the heading */
+    color: #591584; /* Set text color to match the background */
+}
+
+#social-media a {
+    display: block; /* Stack links vertically */
+    margin: 5px 0; /* Space between links */
+    color: #591584; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+#social-media a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #main-lamp {
+        width: 80%; /* Make the lamp responsive */
+        height: auto; /* Allow height to adjust */
+    }
+
+    #LoveYou {
+        font-size: 60px; /* Adjust font size for smaller screens */
+    }
+
+    #instructions,
+    #social-media {
+        max-width: 90%; /* Allow wider usage of screen */
+    }
 }
