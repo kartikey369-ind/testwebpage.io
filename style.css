@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+    font-family: 'Arial', sans-serif; /* Choose a clean, modern font */
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #591584, #ff2e63); /* Gradient background */
+    display: flex;
+    justify-content: center; /* Centering content */
+    align-items: center; /* Centering content vertically */
+    overflow: hidden;
+    position: relative; /* Added for absolute positioning of child elements */
+}
+
+#instructions {
+    width: 250px; /* Set a width for the instructions */
+    padding: 20px; /* Add some padding */
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    position: absolute; /* Position it on the side */
+    left: 20px; /* Align to the left */
+    top: 20px; /* Align to the top */
+    z-index: 2; /* Keep it above other elements */
+}
+
+#social-media {
+    position: absolute; /* Position on the side */
+    right: 20px; /* Align to the right */
+    bottom: 20px; /* Align to the bottom */
+    padding: 20px; /* Add padding */
+    background: rgba(255, 255, 255, 0.8); /* Background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    z-index: 2; /* Keep it above other elements */
+}
+
+#social-media h2 {
+    font-size: 20px; /* Size for the heading */
+    color: #591584; /* Match the color theme */
+    text-align: center; /* Center text */
+}
+
+#social-media a {
+    display: block; /* Make each link block level */
+    font-size: 16px; /* Font size for links */
+    color: #591584; /* Link color */
+    text-decoration: none; /* Remove underline */
+    margin: 5px 0; /* Space between links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+#social-media a:hover {
+    color: #ff2e63; /* Change color on hover */
+}
+
+#main-lamp {
+    width: 802px;
+    height: 600px;
+    background-image: url(dark.png);
+    background-size: cover;
+    border-radius: 20px; /* Rounded corners for a softer look */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    margin: auto;
+}
+
+#LoveYou {
+    position: absolute;
+    font-size: 80px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 3px 3px 20px rgba(255, 255, 255, 0.8); /* Softer white shadow */
+    z-index: 1;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+@keyframes message {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slight movement upwards */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Reset to original position */
+    }
+}
+
+.message_animation {
+    animation-name: message;
+    animation-duration: 3s;
+}
+
+.message_vis {
+    backdrop-filter: blur(10px); /* Subtle blur for better focus */
+    color: transparent;
+    opacity: 0.05;
+}
+
+.white, .red {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); /* Softer stroke color */
+}
+
+#string {
+    width: 5px;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent string */
+    display: flex;
+    align-items: end;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 5px; /* Slight rounding for string */
+}
+
+#string_boll {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, 10px); /* Center the ball horizontally */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+#string_boll:hover {
+    background-color: rgba(255, 165, 0, 0.8); /* Change color on hover */
+}
