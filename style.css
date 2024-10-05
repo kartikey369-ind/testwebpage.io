@@ -25,10 +25,10 @@ body {
 }
 
 #main-lamp {
-    width: 70%; /* Make the lamp responsive */
+    width: 80%; /* Responsive width */
     max-width: 802px; /* Keep the max width for larger screens */
     height: auto; /* Allow height to adjust automatically */
-    background-image: url(dark.png);
+    background-image: url(dark.png); /* Use appropriate image path */
     background-size: cover;
     border-radius: 15px; /* Round corners for aesthetics */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
